@@ -8,6 +8,7 @@ import httpStatus from 'http-status';
 const createUser = catchAsync(async (req: Request, res: Response) => {
   const userData = req.body;
   const result = await userService.createUser(userData);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { password, ...others } = result.toObject();
   responseForData.sendResponseForCreate(res, {
     statusCode: httpStatus.OK,
